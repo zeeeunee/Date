@@ -11,14 +11,13 @@ ES6에서의 객체지향
 -같은 생성자를 통해서 복사된 인스턴스들은 prototype에 등록된 매서드를 공유
 -생성자 안쪽의 this : 해당 생성자를 통해서 앞으로 복사될 인스턴스 객체를 지칭
 */
-
+/*
 class Student {
 	constructor(name, age) {
 		this.name = name;
 		this.age = age;
 		this.school = 'DCODELAB';
 	}
-
 	//프로토타입에 각 인스턴스들이 공통으로 활용할 함수 등록 (메서드)
 	plusAge() {
 		this.age = this.age + 1;
@@ -33,3 +32,31 @@ console.log(s1, s2);
 //인스턴스가 생성된 이후 프로토타입의 메서드를 호출해서 일괄적으로 인스턴스의 구조를 변경가능
 [s1, s2].forEach((el) => el.plusAge());
 console.log(s1, s2);
+*/
+/*
+class Student {
+	constructor(name, age) {
+		this.name = name;
+		this.age = age;
+		this.school = 'DCODELAB';
+	}
+
+	plusAge() {
+		this.age = this.age + 1;
+	}
+
+	renameSchool(txt) {
+		this.school = txt;
+	}
+}
+
+const s1 = new Student('David', 20);
+const s2 = new Student('Emily', 21);
+console.log(s1, s2);
+
+[s1, s2].forEach((el) => {
+	el.plusAge();
+	el.renameSchool('ABC');
+});
+console.log(s1, s2);
+*/
