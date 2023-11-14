@@ -110,7 +110,7 @@ setTimeout(() => {
 	console.log('5초마다실행');
 }, 5000);
 */
-
+/*
 const [btnStart, btnStop] = document.querySelectorAll('button');
 //전역변수를 써야되는 경우
 //특정 변수값이 서로다른 함수에서 공유되야될떄
@@ -130,5 +130,24 @@ btnStop.addEventListener('click', () => {
 btnStart.addEventListener('click', () => {
 	timer = setInterval(() => {
 		console.log('1초마다 반복실행');
+	}, 1000);
+});
+*/
+const h1 = document.querySelector('h1');
+const [btnStart, btnStop] = document.querySelectorAll('button');
+let num = 0;
+let timer = null;
+
+timer = setInterval(() => {
+	h1.innerText = num++;
+}, 1000);
+
+btnStop.addEventListener('click', () => {
+	clearInterval(timer);
+});
+
+btnStart.addEventListener('click', () => {
+	timer = setInterval(() => {
+		h1.innerText = num++;
 	}, 1000);
 });
